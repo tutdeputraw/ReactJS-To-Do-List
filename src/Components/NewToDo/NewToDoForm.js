@@ -9,12 +9,14 @@ const NewToDoForm = (props) => {
 
   const onSubmitHandler = event => {
     event.preventDefault();
-    const data = {
-      id: Math.random(),
-      title: enteredTitle
-    };
-    props.addItem(data);
-    setEnteredTitle('');
+    if (enteredTitle != '') {
+      const data = {
+        id: Math.random(),
+        title: enteredTitle
+      };
+      props.addItem(data);
+      setEnteredTitle('');
+    }
   };
 
   return (
